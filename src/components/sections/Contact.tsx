@@ -50,8 +50,8 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       title: 'Email',
-      details: 'hello@jaimegrullon.com',
-      action: 'mailto:hello@jaimegrullon.com',
+      details: 'jaimeigrullon@gmail.com',
+      action: 'mailto:jaimeigrullon@gmail.com',
     },
     {
       icon: <MapPin className="h-6 w-6" />,

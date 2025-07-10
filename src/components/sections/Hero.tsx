@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
               >
                 <Linkedin size={24} />
               </a>
-              <a 
+              {/* <a 
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
                 aria-label="Twitter"
               >
                 <Twitter size={24} />
-              </a>
+              </a> */}
             </motion.div>
             
             <motion.div

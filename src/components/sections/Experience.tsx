@@ -107,7 +107,7 @@ const Experience: React.FC = () => {
         primary: '/images/experient-logo.png',
         secondary: '/images/cfa-logo.png'
       },
-      description: 'Started as a temp and grew into a full-time role. Worked on various client websites using HTML, CSS, JavaScript, and C#.',
+      description: 'Worked on various client websites using HTML, CSS, JavaScript, and C#.',
       achievements: [
         'Designed web page mockups using Balsamiq',
         'Used Visual Studio 2015 to create and modify web content for national restaurant franchise',
@@ -330,29 +330,44 @@ const Experience: React.FC = () => {
                         <div className="flex items-center gap-2">
                           {'logos' in item ? (
                             <>
-                              <img 
-                                src={item.logos.primary} 
-                                alt={`${item.company.split(' ')[0]} logo`}
-                                className="h-12 w-auto object-contain"
-                              />
-                              <img 
-                                src={item.logos.secondary} 
-                                alt={`${item.company.split('(')[1]?.replace(')', '')} logo`}
-                                className="h-12 w-auto object-contain"
-                              />
+                              <div className="relative group">
+                                <img 
+                                  src={item.logos?.primary} 
+                                  alt="Experient Group logo"
+                                  className="h-12 w-auto object-contain"
+                                />
+                                <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 rounded bg-secondary-900 text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-20">
+                                  Experient Group
+                                </span>
+                              </div>
+                              <div className="relative group">
+                                <img 
+                                  src={item.logos?.secondary} 
+                                  alt={item.company.includes('Coca-Cola') ? 'Coca-Cola logo' : 'Chick-fil-A logo'}
+                                  className="h-12 w-auto object-contain"
+                                />
+                                <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 rounded bg-secondary-900 text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-20">
+                                  {item.company.includes('Coca-Cola') ? 'Coca-Cola' : 'Chick-fil-A'}
+                                </span>
+                              </div>
                             </>
                           ) : 'logo' in item && (
-                            <img 
-                              src={item.logo} 
-                              alt={`${item.company} logo`}
-                              className={`w-auto object-contain ${
-                                item.company === 'Accenture'
-                                  ? 'h-10'
-                                  : item.company === 'Experient Group (Coca-Cola)'
-                                  ? 'h-8'
-                                  : 'h-16'
-                              }`}
-                            />
+                            <div className="relative group">
+                              <img 
+                                src={item.logo} 
+                                alt={`${item.company} logo`}
+                                className={`w-auto object-contain ${
+                                  item.company === 'Accenture'
+                                    ? 'h-10'
+                                    : item.company === 'Experient Group (Coca-Cola)'
+                                    ? 'h-8'
+                                    : 'h-16'
+                                }`}
+                              />
+                              <span className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 px-2 py-1 rounded bg-secondary-900 text-white text-xs opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-20">
+                                {item.company}
+                              </span>
+                            </div>
                           )}
                         </div>
                       </div>
@@ -404,9 +419,11 @@ const Experience: React.FC = () => {
                   )}
                 </div>
                 
-                <p className="text-secondary-600 dark:text-secondary-400 mb-4">
-                  {item.description}
-                </p>
+                {'description' in item && (
+                  <p className="text-secondary-600 dark:text-secondary-400 mb-4">
+                    {item.description}
+                  </p>
+                )}
                 
                 {'credentialId' in item && (
                   <p className="text-sm text-secondary-500 dark:text-secondary-500">

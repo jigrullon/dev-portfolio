@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              {/* <a href="#" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Twitter size={20} />
                 <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              </a> */}
+              <a href="mailto:jaimeigrullon@gmail.com" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <Mail size={20} />
                 <span className="sr-only">Email</span>
               </a>
@@ -55,15 +55,7 @@ const Footer: React.FC = () => {
               <li><a href="#services/consulting" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Consulting</a></li>
             </ul>
           </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
-            <address className="not-italic">
-              <p className="text-secondary-600 dark:text-secondary-400 mb-2">Kingsland, GA</p>
-              <p className="text-secondary-600 dark:text-secondary-400 mb-2">hello@jaimegrullon.com</p>
-              {/* <p className="text-secondary-600 dark:text-secondary-400">+1 (555) 123-4567</p> */}
-            </address>
-          </div>
+
         </div>
         
         <div className="mt-8 pt-8 border-t border-secondary-200 dark:border-secondary-800 flex flex-col md:flex-row justify-between items-center">

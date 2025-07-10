@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Code, Cloud, Database, Users, Zap, Shield, Globe, Settings } from 'lucide-react';
 
 const Services: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('web');
+  const [activeTab, setActiveTab] = useState('aws');
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
