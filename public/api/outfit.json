@@ -1,0 +1,14 @@
+{
+    "date": "2025-11-01",
+    "outfit": {
+      "top": "Clemson polo",
+      "bottom": "Black sweatpants",
+      "shoes": "Gray sneakers",
+      "accessories": ["OrangeWatch"]
+    },
+    "weather": "Sunny and warm",
+    "mood": "Casual and comfortable",
+    "notes": "Perfect for watching football outside",
+    "apiVersion": "1.0",
+    "dayNumber": 1
+}
