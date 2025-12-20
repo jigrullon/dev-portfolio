@@ -105,12 +105,12 @@ const Blog: React.FC = () => {
         </motion.div>
         
         <div className="text-center mt-12">
-          <a 
-            href="/blog" 
+          <Link 
+            to="/blog" 
             className="btn btn-outline"
           >
             View All Articles
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -10,6 +10,7 @@ import Projects from './components/sections/Projects';
 import Blog from './components/sections/Blog';
 import Contact from './components/sections/Contact';
 import BlogPost from './components/blog/BlogPost';
+import BlogList from './components/blog/BlogList';
 import ScrollToTop from './components/ui/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -24,7 +25,6 @@ function Home() {
       sections.forEach((section) => {
         const sectionElement = section as HTMLElement;
         const sectionTop = sectionElement.offsetTop;
-        const sectionHeight = sectionElement.clientHeight;
         if (window.scrollY >= sectionTop - 300) {
           const sectionId = section.getAttribute('id') || '';
           // Handle services tab URLs
@@ -78,6 +78,7 @@ function App() {
         <div className="min-h-screen flex flex-col">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </div>

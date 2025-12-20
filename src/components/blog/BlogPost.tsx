@@ -69,17 +69,7 @@ const BlogPost: React.FC = () => {
         <div className="container-custom max-w-4xl mx-auto px-4 py-8">
           {/* Back button */}
           <Link
-            to="/"
-            onClick={(e) => {
-              e.preventDefault();
-              navigate('/');
-              setTimeout(() => {
-                const blogSection = document.getElementById('blog');
-                if (blogSection) {
-                  blogSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }, 100);
-            }}
+            to="/blog"
             className="inline-flex items-center text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 mb-8 transition-colors"
           >
             <ArrowLeft size={20} className="mr-2" />
