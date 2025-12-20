@@ -1,49 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { blogPosts } from '../../data/blogPosts';
 
 const Blog: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Declaring Bankruptcy',
-      excerpt: 'Confessions of a Tab Hoarder.',
-      image: 'https://static1.squarespace.com/static/5b59fe6a7e3c3ac212f4a9aa/t/5b5a4d932483d6109bb01b2c/1483892244817/1000w/can-i-suggest-that-you-just-declare-bankruptcy--a6d3e.png',
-      date: 'Oct 25, 2025',
-      readTime: '8 min read',
-      category: 'Career',
-      tags: ['productivity', 'organization', 'digital minimalism', 'workflow'],
-      slug: 'declaring-bankruptcy'
-    },
-    {
-      id: 2,
-      title: 'Escaping to Nature Wont Fix Your Work',
-      excerpt: 'Lessons From a Remote Worker’s Failed Homestead.',
-      image: 'https://as2.ftcdn.net/v2/jpg/06/37/89/51/1000_F_637895176_BXbHeWjRGoauooAoGXh0ELwqbCxLCN0y.jpg',
-      date: 'Nov 13, 2025',
-      readTime: '10 min read',
-      category: 'Career',
-      tags: ['remote work', 'work-life balance', 'productivity', 'burnout'],
-      slug: 'escaping-to-nature-wont-fix-your-work'
-    },
-    {
-      id: 3,
-      title: 'Being a Generalist',
-      excerpt: 'Investigating the question of whether being a tech generalist is a blessing or curse.',
-      image: 'https://substackcdn.com/image/fetch/$s_!IaeD!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a36d912-3ba8-40fe-8d6a-cd60825f29b3_690x460.png',
-      date: 'Dec 1, 2025',
-      readTime: '12 min read',
-      category: 'Career',
-      tags: ['career development', 'generalist', 'specialization', 'tech career'],
-      slug: 'being-a-generalist'
-    }
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -92,14 +58,16 @@ const Blog: React.FC = () => {
               variants={itemVariants}
               className="card overflow-hidden group"
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  style={post.id === 1 ? { objectPosition: 'center top' } : {}}
-                />
-              </div>
+              <Link to={`/blog/${post.slug}`} className="block">
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.en.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    style={post.id === 1 ? { objectPosition: 'center top' } : {}}
+                  />
+                </div>
+              </Link>
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-semibold px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 rounded-full">
@@ -110,24 +78,26 @@ const Blog: React.FC = () => {
                     <span>{post.date}</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
-                  {post.title}
-                </h3>
+                <Link to={`/blog/${post.slug}`}>
+                  <h3 className="text-xl font-bold mb-2 line-clamp-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors cursor-pointer">
+                    {post.en.title}
+                  </h3>
+                </Link>
                 <p className="text-secondary-600 dark:text-secondary-400 mb-4 line-clamp-3">
-                  {post.excerpt}
+                  {post.en.subtitle}
                 </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center text-secondary-600 dark:text-secondary-400 text-sm">
                     <Clock size={14} className="mr-1" />
                     <span>{post.readTime}</span>
                   </div>
-                  <a 
-                    href={`/blog/${post.slug}`} 
+                  <Link 
+                    to={`/blog/${post.slug}`}
                     className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline"
                   >
                     Read More
                     <ArrowRight size={16} className="ml-1" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </motion.article>

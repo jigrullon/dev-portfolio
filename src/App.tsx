@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
@@ -8,10 +9,11 @@ import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
 import Blog from './components/sections/Blog';
 import Contact from './components/sections/Contact';
+import BlogPost from './components/blog/BlogPost';
 import ScrollToTop from './components/ui/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
-function App() {
+function Home() {
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -52,21 +54,34 @@ function App() {
   }, [activeSection]);
 
   return (
+    <>
+      <Header activeSection={activeSection} />
+      <main className="flex-grow">
+        <Hero />
+        <About />
+        <Services />
+        <Experience />
+        <Projects />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </>
+  );
+}
+
+function App() {
+  return (
     <ThemeProvider>
-      <div className="min-h-screen flex flex-col">
-        <Header activeSection={activeSection} />
-        <main className="flex-grow">
-          <Hero />
-          <About />
-          <Services />
-          <Experience />
-          <Projects />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <Router>
+        <div className="min-h-screen flex flex-col">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+          </Routes>
+        </div>
+      </Router>
     </ThemeProvider>
   );
 }
