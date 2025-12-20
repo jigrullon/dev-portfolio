@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, Share2, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getBlogPostBySlug, getAdjacentPosts } from '../../data/blogPosts';
 import Header from '../layout/Header';
 import Footer from '../layout/Footer';
@@ -190,11 +192,11 @@ const BlogPost: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-12"
+            className="mb-12 prose prose-lg dark:prose-invert max-w-none prose-headings:text-secondary-900 dark:prose-headings:text-white prose-headings:font-bold prose-p:text-secondary-700 dark:prose-p:text-secondary-300 prose-p:leading-relaxed prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-strong:text-secondary-900 dark:prose-strong:text-white prose-strong:font-bold [&_blockquote]:border-l-4 [&_blockquote]:border-primary-500 [&_blockquote]:pl-4 [&_blockquote]:not-italic [&_blockquote]:text-secondary-700 dark:[&_blockquote]:text-secondary-300 [&_blockquote]:my-6 [&_blockquote_before]:content-none [&_blockquote_after]:content-none"
           >
-            <div className="text-secondary-700 dark:text-secondary-300 leading-relaxed whitespace-pre-line text-lg space-y-4">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {currentContent.content}
-            </div>
+            </ReactMarkdown>
           </motion.article>
 
           {/* Share button (bottom) */}

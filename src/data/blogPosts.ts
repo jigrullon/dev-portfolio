@@ -1,3 +1,14 @@
+// Import blog content files
+import { content as declaringBankruptcyEn } from './blogContent/declaring-bankruptcy-en';
+import { content as declaringBankruptcyEs } from './blogContent/declaring-bankruptcy-es';
+import { content as declaringBankruptcyZh } from './blogContent/declaring-bankruptcy-zh';
+import { content as escapingNatureEn } from './blogContent/escaping-to-nature-en';
+import { content as escapingNatureEs } from './blogContent/escaping-to-nature-es';
+import { content as escapingNatureZh } from './blogContent/escaping-to-nature-zh';
+import { content as beingGeneralistEn } from './blogContent/being-a-generalist-en';
+import { content as beingGeneralistEs } from './blogContent/being-a-generalist-es';
+import { content as beingGeneralistZh } from './blogContent/being-a-generalist-zh';
+
 export interface BlogPostContent {
   title: string;
   subtitle: string;
@@ -29,17 +40,17 @@ export const blogPosts: BlogPost[] = [
     en: {
       title: 'Declaring Bankruptcy',
       subtitle: 'Confessions of a Tab Hoarder.',
-      content: 'Blog post content in English goes here...'
+      content: declaringBankruptcyEn
     },
     es: {
       title: 'Declarar Bancarrota',
       subtitle: 'Confesiones de un Acaparador de Pestañas.',
-      content: 'El contenido del blog en español va aquí...'
+      content: declaringBankruptcyEs
     },
     zh: {
       title: '宣布破产',
       subtitle: '标签囤积者的自白。',
-      content: '博客文章的中文内容在这里...'
+      content: declaringBankruptcyZh
     }
   },
   {
@@ -53,17 +64,17 @@ export const blogPosts: BlogPost[] = [
     en: {
       title: 'Escaping to Nature Wont Fix Your Work',
       subtitle: "Lessons From a Remote Worker's Failed Homestead.",
-      content: 'Blog post content in English goes here...'
+      content: escapingNatureEn
     },
     es: {
       title: 'Escapar a la Naturaleza No Arreglará Tu Trabajo',
       subtitle: 'Lecciones de la Finca Fallida de un Trabajador Remoto.',
-      content: 'El contenido del blog en español va aquí...'
+      content: escapingNatureEs
     },
     zh: {
       title: '逃往大自然不会解决你的工作问题',
       subtitle: '远程工作者失败家园的教训。',
-      content: '博客文章的中文内容在这里...'
+      content: escapingNatureZh
     }
   },
   {
@@ -77,17 +88,17 @@ export const blogPosts: BlogPost[] = [
     en: {
       title: 'Being a Generalist',
       subtitle: 'Investigating the question of whether being a tech generalist is a blessing or curse.',
-      content: 'Blog post content in English goes here...'
+      content: beingGeneralistEn
     },
     es: {
       title: 'Ser un Generalista',
       subtitle: 'Investigando si ser un generalista tecnológico es una bendición o una maldición.',
-      content: 'El contenido del blog en español va aquí...'
+      content: beingGeneralistEs
     },
     zh: {
       title: '成为一个通才',
       subtitle: '探讨成为技术通才是福还是祸的问题。',
-      content: '博客文章的中文内容在这里...'
+      content: beingGeneralistZh
     }
   }
 ];
