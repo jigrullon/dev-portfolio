@@ -16,15 +16,17 @@ And that’s before considering the languages and platforms inside those subfiel
 
 What are the Different Types of Tools Used in DevOps?
 
-![DevOps Tools](https://substackcdn.com/image/fetch/$s_!IaeD!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a36d912-3ba8-40fe-8d6a-cd60825f29b3_690x460.png)
-
-DevOps tools. I mean, look at this. Look at it!
+<figure>
+  <img src="https://substackcdn.com/image/fetch/$s_!IaeD!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7a36d912-3ba8-40fe-8d6a-cd60825f29b3_690x460.png" alt="DevOps Tools" />
+  <figcaption>DevOps tools. I mean, look at this. Look at it!</figcaption>
+</figure>
 
 The tool fatigue is real. According to the Stack Overflow developer survey, over one third of devs are juggling 6-10 tools daily. That number feels low from where I’m standing. But beyond the exhaustion of learning and relearning toolchains, the deeper problem is impermanence. Roles vanish. Stacks lose relevance. Entire career paths evaporate almost overnight. You may still have your job and role for now, but the experience you’re getting is no longer helping you if you ever leave your company. Below you can see the roadmap just for DevOps Engineering.
 
-![DevOps Roadmap](https://substackcdn.com/image/fetch/$s_!4V-i!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86dbcd11-91f6-469a-96b3-305c2a7cf36e_612x792.png)
-
-Not legible, but this is the roadmap for a DevOps engineer. You get the idea.
+<figure>
+  <img src="https://substackcdn.com/image/fetch/$s_!4V-i!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F86dbcd11-91f6-469a-96b3-305c2a7cf36e_612x792.png" alt="DevOps Roadmap" />
+  <figcaption>Not legible, but this is the roadmap for a DevOps engineer. You get the idea.</figcaption>
+</figure>
 
 Some of our roles and specialties are also dying right before our very eyes. DevOps has been “dead” for years now. Just look at a YouTube search and look at how many are from the last few months. Either being replaced by different roles, or just by AI in general like everything else. This gives more credence to the idea of not specializing, as that specialty may just go away one day. There’s a quiet fear beneath the surface of our profession: that we’re always one technology shift away from irrelevance, or one hiring cycle away from someone cheaper taking our spot. That fear fuels burnout, constant upskilling, and the fantasy of quitting it all to go build furniture or farm sweet potatoes somewhere peaceful.
 
