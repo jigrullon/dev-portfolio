@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Moon, Sun, ChevronRight } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 import { motion } from 'framer-motion';
@@ -11,6 +12,9 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   const navItems = [
     { id: 'hero', label: 'Home' },
@@ -18,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     { id: 'services', label: 'Services' },
     { id: 'experience', label: 'Experience' },
     //{ id: 'projects', label: 'Projects' },
-    //{ id: 'blog', label: 'Blog' },
+    { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -32,11 +36,22 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
+    if (!isHomePage) {
+      // If we're on a blog post page, navigate to home first
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -49,17 +64,19 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
     >
       <div className="container-custom flex items-center justify-between">
         <div className="flex items-center">
-          <a
-            href="#hero"
-            className="text-xl font-bold text-primary-600 dark:text-primary-400 flex items-center"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('hero');
-            }}
-          >
+            <Link
+              to="/"
+              className="text-xl font-bold text-primary-600 dark:text-primary-400 flex items-center"
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                if (isHomePage) {
+                  e.preventDefault();
+                  scrollToSection('hero');
+                }
+              }}
+            >
             <span className="mr-2 font-bold">Jaime</span>
             <span>Grullon</span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}

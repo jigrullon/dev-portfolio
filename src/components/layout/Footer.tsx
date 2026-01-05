@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
               <li><a href="#about" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">About</a></li>
               <li><a href="#services" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Services</a></li>
               <li><a href="#experience" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Experience</a></li>
-              {/*<li><a href="#projects" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a></li>*/}
-              {/*<li><a href="#blog" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a></li>*/}
+              {/* <li><a href="#projects" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projects</a></li> */}
+              <li><a href="#blog" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Blog</a></li>
               <li><a href="#contact" className="text-secondary-600 dark:text-secondary-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contact</a></li>
             </ul>
           </div>
